@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QueueLess Smart Line Manager</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>QueueLess Smart Line Manager</h1>
+
+    <button onclick="joinQueue()">Join Queue</button>
+    <button onclick="leaveQueue()">Leave Queue</button>
+    <button onclick="nextPerson()">Next Person</button>
+
+    <h2>Current Queue</h2>
+    <ul id="queueList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
