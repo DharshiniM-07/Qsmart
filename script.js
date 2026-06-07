@@ -10,6 +10,19 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
+var isAdmin = false;
+function adminLogin() {
+
+  var password = prompt("Enter Admin Password");
+
+  if (password === "admin123") {
+    isAdmin = true;
+    alert("Admin Login Successful");
+  } else {
+    alert("Wrong Password");
+  }
+}
+
 // Join Queue
 function joinQueue() {
   var name = prompt("Enter your name");
@@ -51,6 +64,11 @@ function joinQueue() {
 
 // Next Person
 function nextPerson() {
+  if (!isAdmin) {
+  alert("Please login as Admin first");
+  return;
+}
+
   db.collection("queue")
     .orderBy("time")
     .limit(1)
