@@ -23,6 +23,11 @@ function adminLogin() {
   }
 }
 
+
+
+
+
+
 // Join Queue
 function joinQueue() {
   var name = prompt("Enter your name");
@@ -68,6 +73,8 @@ function nextPerson() {
   alert("Please login as Admin first");
   return;
 }
+
+
 
   db.collection("queue")
     .orderBy("time")
