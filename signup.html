@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <style>
+        body{
+            font-family: Arial;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            background:#f4f4f4;
+        }
+
+        .box{
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            width:300px;
+            box-shadow:0 0 10px gray;
+        }
+
+        input,button{
+            width:100%;
+            padding:10px;
+            margin-top:10px;
+        }
+
+        button{
+            background:#007bff;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Sign Up</h2>
+
+<input type="text" id="name" placeholder="Enter Name">
+
+<input type="email" id="email" placeholder="Enter Email">
+
+<input type="password" id="password" placeholder="Enter Password">
+
+    <button onclick="signup()">Sign Up</button>
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyADHjJPbrqTCoxDDptCQbLcS9bqRGoaV84",
+  authDomain: "qsmart-34f82.firebaseapp.com",
+  projectId: "qsmart-34f82",
+  storageBucket: "qsmart-34f82.firebasestorage.app",
+  messagingSenderId: "244066755336",
+  appId: "1:244066755336:web:1d2b0148c3a855f1b242bd"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+<script>
+function signup(){
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    if(name=== "" || email==="" || password===""){
+        alert("Please fill all fields");
+        return;
+    }
+    
+    localStorage.setItem("name", name);
+    localStorage.setItem("userEmail", email);
+    localStorage.setItem("userPassword", password);
+
+    alert("Signup Successful!");
+
+    localStorage.setItem("name", name);
+window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
