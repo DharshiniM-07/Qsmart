@@ -82,7 +82,21 @@ function signup(){
 
     alert("Signup Successful!");
 
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+.then(function(userCredential) {
+
     localStorage.setItem("name", name);
+
+    alert("Signup Successful!");
+
+    window.location.href = "index.html";
+
+})
+.catch(function(error) {
+
+    alert(error.message);
+
+});
 window.location.href = "index.html";
 }
 </script>
